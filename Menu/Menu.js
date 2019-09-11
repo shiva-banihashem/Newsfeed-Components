@@ -52,18 +52,56 @@ function createMenu(menuArray){
     
   }
   
-  menuButton = document.querySelector('.menu-button');
-
-  menuButton.addEventListener('click', (e) => {
-  menu.classList.toggle('menu--open');
-  menu.classList.toggle('close');
+  // menuButton = document.querySelector('.menu-button');
+  // let count = 1;
+  // menuButton.addEventListener('click', (e) => {
   
-})
+  // //Stretch Sliding menu
+  // count++;
+  // console.log(count);
+  // if (!(count%2)){
+  //    TweenMax.from(".menu", 3, {x:-300, opacity:0, scale:1});
+  //   // TweenMax.to(menu, .2, {x: "0px"})
+  //    menu.classList.toggle('menu--open');
+  // }
+  // else {
+  //  TweenMax.to(".menu", 3, {x:'-400px', opacity:0, scale:1});
+  // // TweenMax.to(menu, .2, {x: "-400px"})
+  // menu.classList.toggle('menu--close');
+  // }
+   
+  
+  
+// })
 
   return menu;
 }
 const header = document.querySelector('.header');
 const menu= createMenu(menuItems);
 header.appendChild(menu);
+
+menuButton = document.querySelector('.menu-button');
+  let count = 1;
+  menuButton.addEventListener('click', (e) => {
+  
+  //Stretch Sliding menu
+  count++;
+  console.log(count);
+  if (!(count%2)){
+    
+     TweenMax.to(menu, 0.8, {x: "0px"})
+     menu.classList.toggle('menu--open');
+  }
+  else {
+   
+  
+  TweenMax.to(menu, 0.8, {x: "-400px"})
+  menu.classList.toggle('menu--close');
+  }
+   
+})
+
+
+
 
 

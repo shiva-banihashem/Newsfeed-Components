@@ -105,6 +105,9 @@
 .menu--open {
   display: block;
 }
+.menu--close {
+  display: block;
+}
 html,
 body {
   margin: 0;
