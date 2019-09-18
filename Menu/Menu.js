@@ -33,3 +33,75 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+function createMenu(menuArray){
+
+  const menu = document.createElement('div');
+  menu.classList.add('menu');
+  console.log(menu)
+
+  const ul = document.createElement('ul');
+
+  menu.appendChild(ul);
+
+  
+  for(i=0;i<menuArray.length;i++){
+    const li= document.createElement('li');
+    li.textContent= menuArray[i];
+    ul.appendChild(li);
+    
+  }
+  
+  // menuButton = document.querySelector('.menu-button');
+  // let count = 1;
+  // menuButton.addEventListener('click', (e) => {
+  
+  // //Stretch Sliding menu
+  // count++;
+  // console.log(count);
+  // if (!(count%2)){
+  //    TweenMax.from(".menu", 3, {x:-300, opacity:0, scale:1});
+  //   // TweenMax.to(menu, .2, {x: "0px"})
+  //    menu.classList.toggle('menu--open');
+  // }
+  // else {
+  //  TweenMax.to(".menu", 3, {x:'-400px', opacity:0, scale:1});
+  // // TweenMax.to(menu, .2, {x: "-400px"})
+  // menu.classList.toggle('menu--close');
+  // }
+   
+  
+  
+// })
+
+  return menu;
+}
+const header = document.querySelector('.header');
+const menu= createMenu(menuItems);
+header.appendChild(menu);
+
+menuButton = document.querySelector('.menu-button');
+  let count = 1;
+  menuButton.addEventListener('click', (e) => {
+  
+  //Stretch Sliding menu
+  count++;
+  console.log(count);
+  if (!(count%2)){
+    
+     TweenMax.to(menu, 0.8, {x: "0px"})
+     menu.classList.toggle('menu--open');
+  }
+  else {
+   
+  
+  TweenMax.to(menu, 0.8, {x: "-400px"})
+  menu.classList.toggle('menu--close');
+  }
+   
+})
+
+
+
+
+
